@@ -1,12 +1,10 @@
 param
 (
-    [string]$arg1
+    [string]$arg
 )
-
-function SomeFunction
+function runScript
 {
     $DesktopPath = [Environment]::GetFolderPath("Desktop")
-
-    Set-Content -Path $DesktopPath\test.ps1 -value "$arg1"
+    Set-Content -path c:\Users\Public\Documents\labinstance.txt -content "$arg"
 }
-SomeFunction -arg1 $arg1 #Call the function from within SomeScript.ps1
+runScript -arg $arg
